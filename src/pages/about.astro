@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="À propos de moi | Dylane Josse" description="Informations sur Dylane Josse">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="À propos de moi"
+				tagline="Retrouvez, en quelques lignes, les expériences, les projets ou encore les formations qui m'ont fait évoluer au cours de ma carrière."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/about.png"
+					alt="Jeune homme dans un champ"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						Après une expérience entrepreneuriale de 4 ans (2019 - 2023) durant laquelle j'ai pu accompagner une startup sur différents sujets (administratif, marteking et stratégie), et ayant une appétence particulière pour le domaine de l'informatique, j'ai pris la décision de me spécialiser dans ce secteur.
+					</p>
+					<br>
+					<p>
+						Attiré par le développement informatique, mais aussi par l'administration des systèmes, des réseaux et par la cybersécurité, j'aime me former et compléter mes compétences, que ce soit en autonomie ou auprès d'institions plus classiques commes les écoles spécialisées ou les universités.
+					</p>
+					<br>
+					<p>
+						Comprenant l'importance de pratiquer encore et encore, je cible mon apprentissage sur des aspects théoriques et pratiques pour une répartition à 50-50.
+						Pour la partie théorique, j'ai pu préparer les certifications SecNumAcadémie présentant les notions fondamentales de la cybersécurité comme les différents types d'attaque et comment s'y prémunir, les ateliers numériques Google afin d'appréhender et de mieux comprendre les notions de SEO et d'optimisation web, et enfin la certification AZ900 présentant les aspects techniques fondamentaux d'un environnement cloud et des différents services que les fournisseurs cloud comme Azure, AWS ou GCP peuvent fournir.<br>
+						Enfin, par rapport à la pratique, je met un poing d'honneur à, tous les jours, mettre en pratique les différentes notions vu récémment. Que ce soit des projets complets ou partiels (comme la création d'un module, la mise en place d'interactions avec une API ou encore la création d'une architecture spécifique), j'évolue constamment et vise à travailler sur des notions toujours plus complexes les unes des autres.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Formations</h2>
+				<div class="content">
+					<p>Titre professionnel "Développeur web et web mobile" - Oclock - 2023</p>
+					<p>Azure Fundamentals AZ900 - Microsoft - 2023</p>
+					<p>Principes fondamentaux du marketing numérique - Google - 2023</p>
+					<p>SecNumAcadémie - ANSSI - 2023</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Personnalité</h2>
+				<div class="content">
+					<p>À l'écoute</p>
+					<p>Fort esprit d'équipe</p>
+					<p>Ambitieux</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Stack Technique</h2>
+				<div class="content">
+					<p>PHP</p>
+					<p>Symfony</p>
+					<p>Laravel</p>
+					<p>MySQL</p>
+					<p>Bootstrap</p>
+					<p>Javascript, HTML, CSS (doit-on vraiment les préciser ?)</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Outils</h2>
+				<div class="content">
+					<p>Github</p>
+					<p>VSCode</p>
+					<p>Adminer</p>
+					<p>VirtualBox</p>
+					<p>Azure</p>
+					<p>Codepen</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
